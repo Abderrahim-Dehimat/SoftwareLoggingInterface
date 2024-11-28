@@ -10,12 +10,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * MainCLI is the entry point for the Command Line Interface (CLI) application that interacts with
+ * a backend API for managing users and products. The class provides authentication, menu navigation,
+ * and operations for both users and products through RESTful API calls.
+ */
+
 public class MainCLI {
 
+    // Base URL of the backend API
     private static final String API_BASE_URL = "http://localhost:8080/api";
+    // HttpClient instance for making RESTful API calls
     private static final HttpClient client = HttpClient.newHttpClient();
+    // ObjectMapper for serializing and deserializing JSON data
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
+    // Authentication state variables
     private static boolean isAuthenticated = false;
     private static String authenticatedUserEmail = null;
 
